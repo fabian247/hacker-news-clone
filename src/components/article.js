@@ -3,6 +3,7 @@ import superagent from 'superagent'
 import propTypes from 'prop-types'
 
 import './article.css'
+import moment from 'moment'
 
 const articleUrl = (id) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`
 
