@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
 
 import { getItem } from '../calls/get-item'
+import { isObjectEmpty } from '../helper/helper'
+
 import { By } from './by'
 import { UpvoteIcon } from './upvote-icon'
 
@@ -21,20 +23,27 @@ const Comment = ({ id }) => {
       fetchComment()
     }, [id],
   )
-  return (
-    <div className="comment-container">
-      <div className="comment-title">
-        <UpvoteIcon id={comment.id}/>
-        <By time={comment.time} by={comment.by}/>
+  if (!isObjectEmpty(comment)) {
+    return (
+      <div className="comment-container">
+        <div className="comment-title">
+          <UpvoteIcon id={id}/>
+          <By time={comment.time} by={comment.by}/>
+        </div>
+        <div className="comment-text">
+          {ReactHtmlParser(comment.text)}
+        </div>
+        <div className="comment-reply-link">
+          <a href="reply">reply</a>
+        </div>
+        <div className="comment-kids">
+          {comment.kids && comment.kids.map(kid => <Comment key={kid} id={kid}/>)}
+        </div>
       </div>
-      <div className="comment-text">
-        {ReactHtmlParser(comment.text)}
-      </div>
-      <div className="comment-reply-link">
-        <a href="reply">reply</a>
-      </div>
-    </div>
-  )
+    )
+  }
+
+  return null
 }
 
 Comment.propTypes = {
