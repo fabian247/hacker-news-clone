@@ -44,7 +44,7 @@ const ArticleDetails = () => {
           add comment
         </button>
       </form>
-      {article.kids && article.kids.map(kid => <Comment id={kid}/>)}
+      {article.kids && article.kids.map(kid => <Comment key={kid} id={kid}/>)}
     </div>
   )
 }
