@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { getItem } from '../calls/get-item'
 import { By } from './by'
 import { UpvoteIcon } from './upvote-icon'
+import ReactHtmlParser from 'react-html-parser'
 
 import './comment.css'
 
@@ -26,7 +27,7 @@ const Comment = ({ id }) => {
         <By time={comment.time} by={comment.by}/>
       </div>
       <div className="comment-text">
-        {comment.text}
+        {ReactHtmlParser(comment.text)}
       </div>
       <div className="comment-reply-link">
         <a href="reply">reply</a>
