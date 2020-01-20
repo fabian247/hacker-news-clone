@@ -5,6 +5,7 @@ import { Articles } from './components/articles'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { ArticleDetails } from './components/article-details'
 import { Switch } from 'react-router'
+import { FooterBar } from './components/footer-bar'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
+        <FooterBar/>
       </div>
     </div>
   );
