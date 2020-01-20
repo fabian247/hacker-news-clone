@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import propTypes from 'prop-types'
-
-import './article.css'
 import { Link } from 'react-router-dom'
+
 import { getItem } from '../calls/get-item'
 import { isObjectEmpty } from '../helper/helper'
+
 import { By } from './by'
 import { UpvoteIcon } from './upvote-icon'
+
+import './article.css'
 
 const findDomain = (urlParts) => {
   return urlParts.find(part => (!part.includes('http') && part !== ""))
@@ -26,7 +28,8 @@ const stripUrl = (url) => {
   return strippedDomain
 }
 
-const Article = ({ id, title, url, score, by, time, descendants }) => (<>
+const Article = ({ id, title, url, score, by, time, descendants }) => (
+  <>
     <div className="articles-top">
       <div className="article-container">
         <UpvoteIcon id={id}/>
