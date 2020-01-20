@@ -21,7 +21,7 @@ const Articles = () => {
     () => {
       async function fetchArticles() {
         const articles = await getArticles()
-        setArticles(articles)
+        setArticles(articles.slice(0, 30))
       }
 
       fetchArticles()
