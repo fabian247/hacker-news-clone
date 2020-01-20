@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import superagent from 'superagent'
+import { Article } from './article'
 
 const topStoriesUrl = "https://hacker-news.firebaseio.com/v0/topstories.json"
 
@@ -29,13 +30,10 @@ const Articles = () => {
 
   return (
     <div>
-      {articles.map(articleId => {
-        return (
-          <div>
-            {articleId}
-          </div>
-        )
-      })}
+      {articles.map(articleId => (
+          <Article id={articleId}/>
+        ),
+      )}
     </div>
   )
 }
