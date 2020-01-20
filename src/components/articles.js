@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { getTopstories } from '../calls/get-topstories'
-import { ArticleRow } from './article'
+import { ArticleRow } from './article-row'
 
 const Articles = () => {
   const [articles, setArticles] = useState([])
