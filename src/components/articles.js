@@ -30,8 +30,8 @@ const Articles = () => {
 
   return (
     <ol>
-      {articles.map(( articleId ) => (
-          <Article id={articleId} />
+      {articles.map((articleId) => (
+          <Article id={articleId} key={articleId}/>
         ),
       )}
     </ol>
