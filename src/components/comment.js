@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import ReactHtmlParser from 'react-html-parser'
+
 import { getItem } from '../calls/get-item'
 import { By } from './by'
 import { UpvoteIcon } from './upvote-icon'
-import ReactHtmlParser from 'react-html-parser'
 
 import './comment.css'
 

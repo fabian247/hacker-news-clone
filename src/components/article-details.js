@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
-import './article-details.css'
 import { useParams } from 'react-router'
+
+import { getItem } from '../calls/get-item'
 import { Article } from './article'
 import { Comment } from './comment'
-import { getItem } from '../calls/get-item'
+
+import './article-details.css'
 
 const ArticleDetails = () => {
   const { id } = useParams()
