@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Switch } from 'react-router'
+
 import { HeaderBar } from './components/header-bar'
 import { Articles } from './components/articles'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { ArticleDetails } from './components/article-details'
-import { Switch } from 'react-router'
 import { FooterBar } from './components/footer-bar'
+
+import './App.css';
 
 function App() {
   return (
