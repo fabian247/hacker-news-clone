@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
 import { getItem } from '../calls/get-item'
-import { Article } from './article-row'
+import { Article } from './article'
 import { Comment } from './comment'
 
 import './article-details.css'
