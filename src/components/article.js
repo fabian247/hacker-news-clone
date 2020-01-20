@@ -12,7 +12,7 @@ const findDomain = (urlParts) => {
 }
 
 const stripWWW = (domain) => {
-  if(domain.slice(0,4) === 'www.') {
+  if (domain.slice(0, 4) === 'www.') {
     return domain.slice(4)
   }
   return domain
@@ -51,15 +51,35 @@ const Article = ({ id }) => {
 
   return (
     <li>
-      <div className="article-container">
-        <div className="article-title">
-          {article.title}
+      <div className="articles-top">
+        <div className="article-container">
+          <div className="article-upvote">
+            <a href="https://news.ycombinator.com/vote?id=22098832&how=up&goto=news">^</a>
+          </div>
+          <div className="article-title">
+            {article.title}
+          </div>
+          {article.url &&
+          <div className="article-url">
+            <a href={article.url}>{`( ${stripUrl(article.url)} )`}</a>
+          </div>
+          }
         </div>
-        {article.url &&
-        <div className="article-url">
-          <a href={article.url}>{`( ${stripUrl(article.url)} )`}</a>
+      </div>
+      <div className="article-details">
+        <div className="article-details-entry">
+          {`${article.score && article.score} posted by `}
+          <a href="test">{article.by}</a>
         </div>
-        }
+        <div className="article-details-entry">
+          {article.time && moment(article.time * 1000).fromNow()}
+        </div>
+        <div className="article-details-entry">
+          | hide |
+        </div>
+        <div className="article-details-entry">
+          {article.descendants && article.descendants} comments
+        </div>
       </div>
     </li>
   )
