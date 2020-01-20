@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import propTypes from 'prop-types'
 
 import './article.css'
-import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { getItem } from '../calls/get-item'
+import { By } from './by'
+import { UpvoteIcon } from './upvote-icon'
 
 const findDomain = (urlParts) => {
   return urlParts.find(part => (!part.includes('http') && part !== ""))
@@ -24,12 +25,10 @@ const stripUrl = (url) => {
   return strippedDomain
 }
 
-const Article = ({id, title, url, score, by, time, descendants}) => (<>
+const Article = ({ id, title, url, score, by, time, descendants }) => (<>
     <div className="articles-top">
       <div className="article-container">
-        <div className="article-upvote">
-          <a href="https://news.ycombinator.com/vote?id=22098832&how=up&goto=news">^</a>
-        </div>
+        <UpvoteIcon id={id}/>
         <div className="article-title">
           {title}
         </div>
@@ -44,10 +43,7 @@ const Article = ({id, title, url, score, by, time, descendants}) => (<>
       <div className="article-details-entry">
         {`${score && score} posted by `}
         {/*TODO:: Add url to user*/}
-        <a href="test">{by}</a>
-      </div>
-      <div className="article-details-entry">
-        {time && moment(time * 1000).fromNow()}
+        <By by={by} time={time}/>
       </div>
       <div className="article-details-entry">
         | hide |
