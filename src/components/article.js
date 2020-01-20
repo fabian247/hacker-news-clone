@@ -29,9 +29,13 @@ const Article = ({ id }) => {
   )
 
   return (
-    <div>
-      {article.title}
-    </div>
+    <li>
+      <div className="article-container">
+        <div className="article-title">
+          {article.title}
+        </div>
+      </div>
+    </li>
   )
 }
 

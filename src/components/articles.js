@@ -29,12 +29,12 @@ const Articles = () => {
   )
 
   return (
-    <div>
-      {articles.map(articleId => (
-          <Article id={articleId}/>
+    <ol>
+      {articles.map(( articleId ) => (
+          <Article id={articleId} />
         ),
       )}
-    </div>
+    </ol>
   )
 }
 
