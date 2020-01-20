@@ -1,6 +1,8 @@
 .article-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .article-title {
@@ -10,7 +12,19 @@
 }
 
 .article-url {
+    font-size: 80%;
 }
 
-.article-subtitle {
+.article-upvote {
+    font-size: 80%;
+}
+
+.article-details {
+    display: flex;
+    flex-direction: row;
+    font-size: 80%;
+}
+
+.article-details-entry {
+    margin-left: 4px;
 }
