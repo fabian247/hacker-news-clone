@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
 import { getItem } from '../calls/get-item'
+import { isObjectEmpty } from '../helper/helper'
+
 import { Article } from './article'
 import { Comment } from './comment'
 
 import './article-details.css'
-import { isObjectEmpty } from '../helper/helper'
 
 const ArticleDetails = () => {
   const { id } = useParams()
