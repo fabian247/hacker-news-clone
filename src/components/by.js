@@ -19,8 +19,12 @@ const By = ({ by, time }) => {
 }
 
 By.propTypes = {
-  by: PropTypes.string.isRequired,
+  by: PropTypes.string,
   time: PropTypes.number.isRequired,
+}
+
+By.defaultProps = {
+  by: '',
 }
 
 export { By }
