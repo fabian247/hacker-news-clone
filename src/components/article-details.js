@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './article-details.css'
 import { useParams } from 'react-router'
 import { Article } from './article'
-
+import { Comment } from './comment'
 import { getItem } from '../calls/get-item'
 
 const ArticleDetails = () => {
@@ -43,7 +43,7 @@ const ArticleDetails = () => {
           add comment
         </button>
       </form>
-
+      {article.kids && article.kids.map(kid => <Comment id={kid}/>)}
     </div>
   )
 }

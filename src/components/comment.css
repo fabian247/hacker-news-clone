@@ -1,0 +1,21 @@
+.comment-container {
+}
+
+.comment-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: 80%;
+    color: dimgray;
+}
+
+.comment-text {
+    font-size: 80%;
+    margin: 8px 8px 8px 20px;
+}
+
+.comment-reply-link {
+    font-size: 80%;
+    margin: 0px 8px 10px 20px;
+}
