@@ -6,6 +6,7 @@ import { Article } from './article'
 import { Comment } from './comment'
 
 import './article-details.css'
+import { isObjectEmpty } from '../helper/helper'
 
 const ArticleDetails = () => {
   const { id } = useParams()
@@ -35,7 +36,9 @@ const ArticleDetails = () => {
 
   return (
     <div className="details-container">
+      {!isObjectEmpty(article) &&
       <Article {...article}/>
+      }
       <form onSubmit={handleSubmit} className="details-form">
         <div>
           <textarea rows={5} className="details-comment" value={text} onChange={handleChange}/>

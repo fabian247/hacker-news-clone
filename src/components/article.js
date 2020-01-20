@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import './article.css'
 import { Link } from 'react-router-dom'
 import { getItem } from '../calls/get-item'
+import { isObjectEmpty } from '../helper/helper'
 import { By } from './by'
 import { UpvoteIcon } from './upvote-icon'
 
@@ -58,7 +59,7 @@ const Article = ({ id, title, url, score, by, time, descendants }) => (<>
 )
 
 const ArticleRow = ({ id }) => {
-  const [article, setArticle] = useState([])
+  const [article, setArticle] = useState({})
   useEffect(
     () => {
       async function fetchArticle() {
@@ -72,7 +73,9 @@ const ArticleRow = ({ id }) => {
 
   return (
     <li>
-      <Article {...article} />
+      {!isObjectEmpty(article) &&
+      <Article id={id} {...article} />
+      }
     </li>
   )
 }
