@@ -6,6 +6,24 @@ import './article.css'
 
 const articleUrl = (id) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`
 
+const findDomain = (urlParts) => {
+  return urlParts.find(part => (!part.includes('http') && part !== ""))
+}
+
+const stripWWW = (domain) => {
+  if(domain.slice(0,4) === 'www.') {
+    return domain.slice(4)
+  }
+  return domain
+}
+
+const stripUrl = (url) => {
+  const parts = url.split('/')
+  const domain = findDomain(parts)
+  const strippedDomain = stripWWW(domain)
+  return strippedDomain
+}
+
 const getArticle = async (id) => {
   try {
     const res = await superagent.get(articleUrl(id))
@@ -36,6 +54,11 @@ const Article = ({ id }) => {
         <div className="article-title">
           {article.title}
         </div>
+        {article.url &&
+        <div className="article-url">
+          <a href={article.url}>{`( ${stripUrl(article.url)} )`}</a>
+        </div>
+        }
       </div>
     </li>
   )
