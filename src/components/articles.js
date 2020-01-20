@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import superagent from 'superagent'
-import { Article } from './article'
+import { ArticleRow } from './article'
 
 const topStoriesUrl = "https://hacker-news.firebaseio.com/v0/topstories.json"
 
@@ -31,7 +31,7 @@ const Articles = () => {
   return (
     <ol>
       {articles.map((articleId) => (
-          <Article id={articleId} key={articleId}/>
+          <ArticleRow id={articleId} key={articleId}/>
         ),
       )}
     </ol>
