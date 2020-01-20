@@ -1,0 +1,16 @@
+.article-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-title {
+    margin: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+.article-url {
+}
+
+.article-subtitle {
+}

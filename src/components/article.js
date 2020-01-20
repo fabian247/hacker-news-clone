@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import superagent from 'superagent'
 import propTypes from 'prop-types'
 
+import './article.css'
+
 const articleUrl = (id) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`
 
 const getArticle = async (id) => {
