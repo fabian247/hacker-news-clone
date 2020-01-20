@@ -1,0 +1,36 @@
+.bar-container {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    background: coral;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bar-logo {
+    margin: 2px;
+    padding: 2px;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    background: coral;
+    border: white solid 1px;
+    font-weight: bold;
+}
+
+.bar-title {
+    margin: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+.bar-separator {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.bar-entry {
+    display: flex;
+    text-align: center;
+}
