@@ -69,6 +69,7 @@ const Article = ({ id }) => {
       <div className="article-details">
         <div className="article-details-entry">
           {`${article.score && article.score} posted by `}
+          {/*TODO:: Add url to user*/}
           <a href="test">{article.by}</a>
         </div>
         <div className="article-details-entry">
@@ -78,6 +79,7 @@ const Article = ({ id }) => {
           | hide |
         </div>
         <div className="article-details-entry">
+          {/*TODO: Add subpage*/}
           {article.descendants && article.descendants} comments
         </div>
       </div>
