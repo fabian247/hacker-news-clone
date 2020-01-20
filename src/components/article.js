@@ -42,7 +42,7 @@ const Article = ({ id }) => {
 }
 
 Article.propTypes = {
-  id: propTypes.string.isRequired,
+  id: propTypes.number.isRequired,
 }
 
 export { Article }
