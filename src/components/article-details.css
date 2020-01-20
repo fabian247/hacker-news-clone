@@ -2,3 +2,16 @@
     padding: 10px;
 }
 
+.details-form {
+    width: 50%;
+    margin: 20px;
+}
+
+.details-comment {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.details-button {
+    flex-grow: 0;
+}

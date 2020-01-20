@@ -34,10 +34,29 @@ const ArticleDetails = () => {
     }, [id],
   )
 
+  const [text, setText] = useState('')
+
+  const handleChange = event => {
+    setText(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert(`You entered comment: ${text}`)
+  }
+
   return (
     <div className="details-container">
       <Article {...article}/>
-      <input />
+      <form onSubmit={handleSubmit} className="details-form">
+        <div>
+          <textarea rows={5} className="details-comment" value={text} onChange={handleChange}/>
+        </div>
+        <button className="details-button">
+          add comment
+        </button>
+      </form>
+
     </div>
   )
 }
